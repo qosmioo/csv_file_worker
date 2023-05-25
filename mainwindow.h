@@ -34,6 +34,9 @@ private:
     void clear_table();
     void clear_metric();
     int find_position_region (QStringList header);
+    void adapt_tabel(entry_point_returning_value arg);
+    void filling_table(int counter, entry_point_returning_value arg);
+
     Ui::MainWindow *ui;
 };
 #endif // MAINWINDOW_H

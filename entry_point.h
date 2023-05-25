@@ -15,26 +15,27 @@ enum func_type
 
 struct entry_point_argument{
     int rows_num;
-    double *column;
+    int placed;
     int position_region;
+    double *column;
+    func_type func_type;
+    std::string all_data;
     std::string region;
     std::string filename;
-    func_type func_type;
-    int amount_of_metrics;
+
 };
 
 struct entry_point_returning_value {
+    int rows_num = 0;
+    int last_row_index;
+    int placed = 0;
     double max;
     double min;
-    double mediana;
-    int amount_of_appr_metrics;
+    double mid;
     std::string file_to_string;
-    int rows_count;
-    int error = 0;
 };
 
-entry_point_returning_value get_files_data(entry_point_argument arg);
-entry_point_returning_value get_metrics (entry_point_argument column);
+
 entry_point_returning_value entry_point (entry_point_argument data);
 
 #endif // ENTRY_POINT_H

@@ -2,6 +2,9 @@
 <ui version="4.0">
  <class>MainWindow</class>
  <widget class="QMainWindow" name="MainWindow">
+  <property name="enabled">
+   <bool>true</bool>
+  </property>
   <property name="geometry">
    <rect>
     <x>0</x>
@@ -10,14 +13,32 @@
     <height>1000</height>
    </rect>
   </property>
+  <property name="minimumSize">
+   <size>
+    <width>1200</width>
+    <height>1000</height>
+   </size>
+  </property>
+  <property name="maximumSize">
+   <size>
+    <width>1200</width>
+    <height>1000</height>
+   </size>
+  </property>
+  <property name="font">
+   <font>
+    <weight>75</weight>
+    <bold>true</bold>
+   </font>
+  </property>
   <property name="windowTitle">
-   <string>MainWindow</string>
+   <string>csv_worker</string>
   </property>
   <widget class="QWidget" name="centralwidget">
    <widget class="QLabel" name="lbl_path_name">
     <property name="geometry">
      <rect>
-      <x>80</x>
+      <x>30</x>
       <y>20</y>
       <width>131</width>
       <height>51</height>
@@ -25,7 +46,9 @@
     </property>
     <property name="font">
      <font>
-      <pointsize>12</pointsize>
+      <pointsize>10</pointsize>
+      <weight>75</weight>
+      <bold>true</bold>
      </font>
     </property>
     <property name="text">
@@ -35,7 +58,7 @@
    <widget class="QPushButton" name="pbt_open_file">
     <property name="geometry">
      <rect>
-      <x>80</x>
+      <x>160</x>
       <y>90</y>
       <width>241</width>
       <height>31</height>
@@ -44,6 +67,8 @@
     <property name="font">
      <font>
       <pointsize>10</pointsize>
+      <weight>75</weight>
+      <bold>true</bold>
      </font>
     </property>
     <property name="text">
@@ -53,15 +78,17 @@
    <widget class="QPushButton" name="btn_load_data">
     <property name="geometry">
      <rect>
-      <x>570</x>
-      <y>20</y>
+      <x>600</x>
+      <y>30</y>
       <width>171</width>
       <height>91</height>
      </rect>
     </property>
     <property name="font">
      <font>
-      <pointsize>10</pointsize>
+      <pointsize>9</pointsize>
+      <weight>75</weight>
+      <bold>true</bold>
      </font>
     </property>
     <property name="text">
@@ -71,7 +98,7 @@
    <widget class="QPushButton" name="btn_calc_metrics">
     <property name="geometry">
      <rect>
-      <x>570</x>
+      <x>600</x>
       <y>140</y>
       <width>171</width>
       <height>91</height>
@@ -79,7 +106,9 @@
     </property>
     <property name="font">
      <font>
-      <pointsize>10</pointsize>
+      <pointsize>9</pointsize>
+      <weight>75</weight>
+      <bold>true</bold>
      </font>
     </property>
     <property name="text">
@@ -99,7 +128,7 @@
    <widget class="QLabel" name="lbl_region">
     <property name="geometry">
      <rect>
-      <x>80</x>
+      <x>60</x>
       <y>140</y>
       <width>131</width>
       <height>51</height>
@@ -109,6 +138,8 @@
      <font>
       <family>MS Shell Dlg 2</family>
       <pointsize>10</pointsize>
+      <weight>75</weight>
+      <bold>true</bold>
      </font>
     </property>
     <property name="text">
@@ -125,12 +156,12 @@
      </rect>
     </property>
    </widget>
-   <widget class="QLabel" name="lbl_cols_num">
+   <widget class="QLabel" name="lbl_col_ind">
     <property name="geometry">
      <rect>
-      <x>80</x>
+      <x>60</x>
       <y>180</y>
-      <width>141</width>
+      <width>171</width>
       <height>51</height>
      </rect>
     </property>
@@ -138,6 +169,8 @@
      <font>
       <family>MS Shell Dlg 2</family>
       <pointsize>10</pointsize>
+      <weight>75</weight>
+      <bold>true</bold>
      </font>
     </property>
     <property name="text">
@@ -152,6 +185,119 @@
       <width>1131</width>
       <height>721</height>
      </rect>
+    </property>
+   </widget>
+   <widget class="QLabel" name="lbl_path">
+    <property name="geometry">
+     <rect>
+      <x>160</x>
+      <y>30</y>
+      <width>451</width>
+      <height>31</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <pointsize>8</pointsize>
+      <weight>75</weight>
+      <bold>true</bold>
+     </font>
+    </property>
+    <property name="text">
+     <string/>
+    </property>
+   </widget>
+   <widget class="QLabel" name="lbl_max">
+    <property name="geometry">
+     <rect>
+      <x>840</x>
+      <y>50</y>
+      <width>81</width>
+      <height>31</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <pointsize>10</pointsize>
+     </font>
+    </property>
+    <property name="text">
+     <string>Max:</string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="lbl_med">
+    <property name="geometry">
+     <rect>
+      <x>840</x>
+      <y>110</y>
+      <width>81</width>
+      <height>31</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <pointsize>10</pointsize>
+     </font>
+    </property>
+    <property name="text">
+     <string>Mid:</string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="lbl_min">
+    <property name="geometry">
+     <rect>
+      <x>840</x>
+      <y>170</y>
+      <width>81</width>
+      <height>31</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <pointsize>10</pointsize>
+     </font>
+    </property>
+    <property name="text">
+     <string>Min:</string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="lbl_max_res">
+    <property name="geometry">
+     <rect>
+      <x>930</x>
+      <y>50</y>
+      <width>141</width>
+      <height>31</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string/>
+    </property>
+   </widget>
+   <widget class="QLabel" name="lbl_mid_res">
+    <property name="geometry">
+     <rect>
+      <x>930</x>
+      <y>110</y>
+      <width>141</width>
+      <height>31</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string/>
+    </property>
+   </widget>
+   <widget class="QLabel" name="lbl_min_res">
+    <property name="geometry">
+     <rect>
+      <x>930</x>
+      <y>170</y>
+      <width>141</width>
+      <height>31</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string/>
     </property>
    </widget>
   </widget>
